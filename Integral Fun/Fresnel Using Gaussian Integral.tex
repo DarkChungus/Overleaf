@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+
+\title{Fresnel Using Gaussian Integral}
+\author{Prakrit Gajurel}
+\date{May 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+The Fresnel integrals are defined as follows: \\
+\[
+\int_0^{\infty} cos(x^2) dx = \int_0^{\infty} sin(x^2) dx = \sqrt{\frac{\pi}{8}}
+\]
+
+\begin{align}
+    \text{This is a pretty difficult integral to evaluate for most, but I have just found a way to evaluate it using the Gaussian integral, and I think it’s pretty cool.}
+\end{align}
+
+\section{Evaluating the Integrals}
+
+Note that:
+
+\[
+\int_{-\infty}^{\infty} e^{-\alpha x^2}dx = \sqrt{\frac{\pi}{\alpha}}
+\]
+
+Also note, by Euler's Identity, we get the following result:
+
+\[
+e^{-ix^2} = cos(x^2) - isin(x^2)
+\]
+
+\[
+\text{Therefore we get } \int_0^{\infty} e^{-ix^2} = \sqrt{\frac{\pi}{4i}}
+\]
+
+Continuing this process we get,
+
+\[
+\int_0^{\infty} cos(x^2) dx - i \int_0^{\infty} sin(x^2) dx = \sqrt{\frac{\pi}{4i}}
+\]
+
+Note the following complex result:
+
+\[
+\sqrt{i} = \frac{1}{\sqrt{2}} - i\frac{1}{\sqrt{2}}
+\]
+
+\[
+\text{Then the R.H.S of our previous equation becomes } \frac{\sqrt{\pi}}{\sqrt{8}} - i\frac{\sqrt{\pi}}{\sqrt{8}}.
+\]
+
+\[
+\int_0^{\infty} cos(x^2) dx - i \int_0^{\infty} sin(x^2) dx = \frac{\sqrt{\pi}}{\sqrt{8}} - i\frac{\sqrt{\pi}}{\sqrt{8}}
+\]
+
+Which would give us our final result:
+
+\[
+\boxed{\int_0^{\infty} cos(x^2) dx = \int_0^{\infty} sin(x^2) dx = \sqrt{\frac{\pi}{8}}}
+\]
+
+As needed. $\square$
+
+\end{document}
